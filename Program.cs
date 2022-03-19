@@ -21,6 +21,25 @@ namespace StopWatch
       string data = Console.ReadLine().ToLower();
       char type = char.Parse(data.Substring(data.Length - 1, 1));
       int time = int.Parse(data.Substring(0, data.Length - 1));
+
+      if (type == 0)
+      {
+        System.Environment.Exit(0);
+      }
+
+      Start(time * Multiplier(type));
+    }
+
+    static int Multiplier(char type)
+    {
+      int result = 1;
+
+      if (type == 'm')
+      {
+        result = 60;
+      }
+
+      return result;
     }
 
     static void Start(int time)
