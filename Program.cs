@@ -27,7 +27,20 @@ namespace StopWatch
         System.Environment.Exit(0);
       }
 
-      Start(time * Multiplier(type));
+      PreStart(time * Multiplier(type));
+    }
+
+    static void PreStart(int time)
+    {
+      Console.Clear();
+      Console.WriteLine("Ready...");
+      Thread.Sleep(1000);
+      Console.WriteLine("Set...");
+      Thread.Sleep(1000);
+      Console.WriteLine("Go...");
+      Thread.Sleep(2500);
+
+      Start(time);
     }
 
     static int Multiplier(char type)
